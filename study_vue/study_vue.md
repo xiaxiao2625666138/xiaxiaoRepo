@@ -1,15 +1,3 @@
-<head>
-<style>
-    .gray1{
-        background-color:"#888888";
-    }
-    .gray2{
-        background-color:"#444444";
-    }
-</style>
-</head>
-
-
 # <img src="img\vue.png" width="25px" height="25px" /> **Vue.js学习体会**
 2018年9月29日&emsp;&emsp;周雪振(5141509091)
 ___
