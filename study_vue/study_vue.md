@@ -1,10 +1,10 @@
 <head>
 <style>
     .gray1{
-        background-color:#888888;
+        background-color:"#888888";
     }
     .gray2{
-        background-color:#444444;
+        background-color:"#444444";
     }
 </style>
 </head>
@@ -268,15 +268,15 @@ new Vue({
 >  <tr class="gray1">
 >  <th>目录文件</th><th>说明</th>
 >  </tr>
->  <tr class=gray2>
+>  <tr class="gray2">
 >  <td>config</td>
 >  <td>配置目录，包括端口号等。初学者可以使用默认的</td>
 >  </tr>
->  <tr class=gray2>
+>  <tr class="gray2">
 >  <td>mode_modules</td>
 >  <td>npm 加载的项目依赖模块</td>
 >  </tr>
->  <tr class=gray2>
+>  <tr class="gray2">
 >  <td>src</td>
 >  <td>这里是开发者的开发目录，基本上要做的事情都在这个目录里。里面包含了几个目录及文件：
 >    <ul>
@@ -288,26 +288,26 @@ new Vue({
 >  </td>
 >  </tr>
 >  </tr>
->  <tr class=gray2>
+>  <tr class="gray2">
 >  <td>static</td>
 >  <td>静态资源目录，如图片、字体等。</td>
 >  </tr>
 >  </tr>
 >  </tr>
->  <tr class=gray2>
+>  <tr class="gray2">
 >  <td>test</td>
 >  <td>初始测试目录，可删除.</td>
 >  </tr>
 > </tr>
->  <tr class=gray2>
+>  <tr class="gray2">
 >  <td>.xxxx文件</td>
 >  <td>这些是一些配置文件，包括语法配置，git配置等。</td>
 >  </tr>
->  <tr class=gray2>
+>  <tr class="gray2">
 >  <td>package.json</td>
 >  <td>项目配置文件.</td>
 >  </tr>
->  <tr class=gray2>
+>  <tr class="gray2">
 >  <td>README.md</td>
 >  <td>项目的说明文档，markdown 格式</td>
 >  </tr>
