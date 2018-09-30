@@ -244,7 +244,7 @@ new Vue({
 <!--完整语法-->
 <a v-bind:href="url"></a>
 <!--缩写-->
-<a:href="url"></a>
+<a :href="url"></a>
 ```
 &emsp;&emsp;**v-on缩写**
 ```HTML
