@@ -6,6 +6,7 @@
 
 <br />
 
+---
 ## 什么是Git
 &emsp;&emsp;[Git菜鸟教程](http://www.runoob.com/git/git-tutorial.html)关于git的开言这样介绍：
 > Git是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。<br/>
@@ -16,6 +17,8 @@
 &emsp;&emsp;[分布式和集中式版本控制的区别](https://blog.csdn.net/zhangqun23/article/details/52972261)<br />
 &emsp;&emsp;[集中式版本控制与分布式版本控制的区别](https://www.jianshu.com/p/302932e65bbb)<br />
 &emsp;&emsp;[何为集中式版本控制系统与分布式版本控制系统?](https://blog.csdn.net/gggg_ggg/article/details/49981617)<br />
+
+---
 &emsp;&emsp;
 ## <font color=gray> Git配置
 &emsp;&emsp;**！！！这部分可以说跟一般使用者没什么关系，可以完全忽略不去了解！！！**<br /><br />
@@ -51,6 +54,58 @@ $ git config --list
 ```
 $ git config user.name
 ```
-
-
 </font>
+
+---
+## Git工作区、暂存区、版本库
+> * **工作区:** 就是你在电脑里能够看到的目录。
+> * **暂存区:** 英文叫做stage，或index。一般存放在".git/index"文件中。
+> * **版本库:** 工作区有一个隐藏的目录.git，这个不算工作区，二是Git的版本库。
+
+三者之间的关系为：
+![工作区、暂存区、版本库](img/gitWIV.png)
+
+---
+## Git创建仓库
+### **git init** <br />
+&emsp;&emsp;Git使用<code>git init</code>命令来初始化一个Git仓库。执行此命令后，Git仓库会在根目录生成一个.git目录，该目录包含了资源的所有元数据，其他项目的目录保持不变。<br />
+&emsp;&emsp;使用方法：<br />
+&emsp;&emsp;想使用某个目录作为仓库，我们只需要在那个目录下使它初始化。
+```
+$ cd myrepo
+$ git init
+```
+&emsp;&emsp;myrepo是一个目录，比如d:/myfile/myrepo。<br />
+&emsp;&emsp;我们也可以制定目录作为Git仓库：
+```
+git init newrepo
+```
+&emsp;&emsp;初始化后，会在myrepo或newrepo目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源都存放在这个目录中。<br />
+### **git clone**
+&emsp;&emsp;
+我们可以使用<code>git clone</code>从现有的Git仓库中拷贝项目，格式为：
+```
+git clone <repo>
+```
+如果需要克隆到指定的目录，可以使用下面的命令格式：
+```
+git clone <repo> <directory>
+```
+&emsp;&emsp;repo:Git仓库。 <br />
+&emsp;&emsp;directory:本地仓库。<br />
+
+---
+## 文件操作
+### **跟踪和提交文件**
+&emsp;&emsp;使用<code>git add</code>进行文件的跟踪，使用<code>git commit -m '描述信息'</code>进行文件的提交。<br />
+&emsp;&emap;比如创建一个文件之后(test.cpp)，我们需要执行这样的命令跟踪文件：
+```
+git add test.cpp
+```
+&emsp;&emsp;执行这样的命令提交文件到版本库：
+```
+git commit -m 'first commit'
+```
+&emsp;&emsp;如果我们修改了已经跟踪的文件，我们需要重新执行add和commit指令，完成版本库里文件的更新。
+
+---
