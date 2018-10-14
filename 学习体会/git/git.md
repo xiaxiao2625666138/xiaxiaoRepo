@@ -62,7 +62,7 @@ $ git config user.name
 > * **暂存区:** 英文叫做stage，或index。一般存放在".git/index"文件中。
 > * **版本库:** 工作区有一个隐藏的目录.git，这个不算工作区，二是Git的版本库。
 
-三者之间的关系为：
+&emsp;&emsp;三者之间的关系为：<br />
 ![工作区、暂存区、版本库](img/gitWIV.png)
 
 ---
@@ -82,8 +82,7 @@ git init newrepo
 ```
 &emsp;&emsp;初始化后，会在myrepo或newrepo目录下会出现一个名为 .git 的目录，所有 Git 需要的数据和资源都存放在这个目录中。<br />
 ### **git clone**
-&emsp;&emsp;
-我们可以使用<code>git clone</code>从现有的Git仓库中拷贝项目，格式为：
+&emsp;&emsp;我们可以使用<code>git clone</code>从现有的Git仓库中拷贝项目，格式为：
 ```
 git clone <repo>
 ```
@@ -98,7 +97,7 @@ git clone <repo> <directory>
 ## 文件操作
 ### **跟踪和提交文件**
 &emsp;&emsp;使用<code>git add</code>进行文件的跟踪，使用<code>git commit -m '描述信息'</code>进行文件的提交。<br />
-&emsp;&emap;比如创建一个文件之后(test.cpp)，我们需要执行这样的命令跟踪文件：
+&emsp;&emsp;比如创建一个文件之后(test.cpp)，我们需要执行这样的命令跟踪文件：
 ```
 git add test.cpp
 ```
