@@ -214,16 +214,16 @@ int main(){
 
 &emsp;&emsp;图片是这样的(夕阳是tatil，可以不写)：
 ```markdown
-![夕阳](\img\image.png "夕阳")
+![夕阳](img\image.png "夕阳")
 ```
 &emsp;&emsp;效果是这样的(这里的效果没有tatil)：
-> ![夕阳](\img\image.png "夕阳")
+> ![夕阳](img\image.png "夕阳")
 
 &emsp;&emsp;图片也可以像链接的索引连接一样(效果不做展示):
 ```markdown
 ![夕阳][lf]
 
-[lf]:\img\image.png "夕阳"
+[lf]:img\image.png "夕阳"
 ```
 &emsp;&emsp;**markdown尚不能指定图片的高度和宽度等，如果需要的话可以使用html的<img>标签。**
 
