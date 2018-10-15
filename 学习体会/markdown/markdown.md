@@ -1,5 +1,4 @@
 # <font color=red>Markdown</font>入门级简单操作
-<body style="background-color:#005555">
 
 ## 一、标题
 ```markdown
@@ -168,7 +167,7 @@ int main(){
 ```
 &emsp;&emsp;或者，缩进一个Tab或者四个空格，也可以达到同样的效果(除了不能指名代码语言类型)：
 ```markdown
-    cpp
+
     int main(){
         return 0;
     }
@@ -209,7 +208,7 @@ int main(){
 [1]:www.w3school.com.cn "w3school"
 [w3school][1]
 ```
-&emsp;&emsp;[1]放到文档的哪里都可以，效果是这样的：
+&emsp;&emsp;\[1]放到文档的哪里都可以，效果是这样的：
 >[1]:www.w3school.com.cn "w3school"
 >[w3school][1] 
 
@@ -218,7 +217,7 @@ int main(){
 ![路飞](\img\lufei.jpg "路飞")
 ```
 &emsp;&emsp;效果是这样的：
->![路飞](\img\lufei.jpg "路飞")
+> ![路飞](\img\lufei.jpg "路飞")
 
 &emsp;&emsp;图片也可以像链接的索引连接一样(效果不做展示):
 ```markdown
@@ -232,14 +231,12 @@ int main(){
 &emsp;&emsp;表格可以使用html的\<table>标签：
 ```markdown
 <table>
-  <th>
   <tr>
     <th>name</th>
     <th>age</th>
     <th>like</th>
     <th>major</th>
   </tr>
-  </th>
   <tr>
     <td>zhou</td>
     <td>22</td>
@@ -256,14 +253,12 @@ int main(){
 ```
 &emsp;&emsp;效果是这样的：
 ><table>
->  <th>
 >  <tr>
 >    <th>name</th>
 >    <th>age</th>
 >    <th>like</th>
 >    <th>major</th>
 >  </tr>
->  </th>
 >  <tr>
 >    <td>zhou</td>
 >    <td>22</td>
@@ -300,7 +295,7 @@ int main(){
 <font color=#00ffff size=18 face="STCAIYUN">华文彩云</font> <br />
 <font color=gray size=8>gray</font> <br />
 ```
-&emsp;&emsp;字体也是使用html文档的格式，效果是这样的：
+&emsp;&emsp;字体也是使用html文档的格式，有些编辑器是不支持的，比如github！vscode支持！效果是这样的：
 ><font face="黑体">我是黑体字</font> <br />
 ><font face="微软雅黑">我是微软雅黑</font> <br />
 ><font face="仿宋">我是仿宋体</font> <br />
@@ -308,4 +303,3 @@ int main(){
 ><font color=#00ffff size=18 face="STCAIYUN">华文彩云</font> <br />
 ><font color=gray size=8>gray</font> <br />
 
-</body>
