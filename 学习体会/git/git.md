@@ -318,8 +318,9 @@ bb1c93b - xiaxiao2625666138, 2 weeks ago : my harvest in studying vue
 cda4eaa - xiaxiao2625666138, 2 weeks ago : my harvest in studying vue
 98ad26f - xiaxiao2625666138, 2 weeks ago : read me to get new homework
 ```
-&emsp;&emsp;`git log --pretty=format`常用的选项列出了常用的格式占位符写法及其代表意义。
-|选项|说明|
+&emsp;&emsp;`git log --pretty=format`常用的选项列出了常用的格式占位符写法及其代表意义。  
+
+| 选项 | 说明 |
 | - | - |
 |%H|提交对象（commit）的完整哈希字串|
 |%h|提交对象的简短哈希字串|
@@ -350,8 +351,9 @@ $ git log --pretty=format:"%h %s" --graph
 * d6016bc require time for xmlschema
 *  11d191e Merge branch 'defunkt' into local
 ```
-&emsp;&emsp;`git log`的常用选项：
-|选项|说明|
+&emsp;&emsp;`git log`的常用选项：  
+
+| 选项 | 说明 |
 | - | - |
 |-p|按补丁格式显示每个更新之间的差异。|
 |--stat|显示每次更新的文件修改统计信息。|
@@ -362,8 +364,9 @@ $ git log --pretty=format:"%h %s" --graph
 |--relative-date|使用较短的相对时间显示（比如，“2 weeks ago”）。|
 |--graph|显示 ASCII 图形表示的分支合并历史。|
 |--pretty|使用其他格式显示历史提交信息。可用的选项包括 oneline，short，full，fuller 和 format（后跟指定格式）。|
-&emsp;&emsp;`git log`的另一种常用选项是限制输出的选项：
-|选项|说明|
+&emsp;&emsp;`git log`的另一种常用选项是限制输出的选项：  
+
+| 选项 | 说明 |
 | - | - |
 |-(n)|仅显示最近的 n 条提交|
 |--since, --after|仅显示指定时间之后的提交。|
