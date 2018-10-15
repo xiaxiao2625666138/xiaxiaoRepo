@@ -242,6 +242,144 @@ Changes to be committed:
 
     renamed:    README.md -> README
 ```
+---
+## 撤销操作
+&emsp;&emsp;已经提交了，发现漏添加了文件，或者提交信息写错了，此时可以这样：
+```
+$ git commit -m 'initial commit'
+$ git add forgotten_file
+$ git commit --amend
+```
+&emsp;&emsp;最终只会得到一个提交  
+&emsp;&emsp;`git reset HEAD <file>`操作可以撤销暂存：
+```
+$ git reset HEAD lll.txt
+```
+>虽然在调用时加上 --hard 选项可以令 git reset 成为一个危险的命令（译注：可能导致工作目录中所有当前进度丢失！），但本例中工作目录内的文件并不会被修改。 不加选项地调用 git reset 并不危险 — 它只会修改暂存区域。  
 
+&emsp;&emsp;`git checkout -- <file>`可以撤销之前做出的修改，还原成上次提交时的样子(或者刚克隆完的样子)
+```
+$ git checkout -- lll.txt
+```
+>你需要知道 git checkout -- [file] 是一个危险的命令，这很重要。 你对那个文件做的任何修改都会消失 - 你只是拷贝了另一个文件来覆盖它。 除非你确实清楚不想要那个文件了，否则不要使用这个命令。
 
+>在 Git 中任何 已提交的 东西几乎总是可以恢复的。 甚至那些被删除的分支中的提交或使用 --amend 选项覆盖的提交也可以恢复（阅读 数据恢复 了解数据恢复）。 然而，任何你未提交的东西丢失后很可能再也找不到了。
+
+---
+
+## **查看提交历史**
+&emsp;&emsp;`git log`可以查看提交的历史。默认是最新的更新排在前面。 正如你所看到的，这个命令会列出每个提交的 SHA-1 校验和、作者的名字和电子邮件地址、提交时间以及提交说明。
+```
+$ git log
+commit ca82a6dff817ec66f44342007202690a93763949
+Author: Scott Chacon <schacon@gee-mail.com>
+Date:   Mon Mar 17 21:52:11 2008 -0700
+
+    changed the version number
+
+commit 085bb3bcb608e1e8451d4b2432f8ecbe6306e7e7
+Author: Scott Chacon <schacon@gee-mail.com>
+Date:   Sat Mar 15 16:40:33 2008 -0700
+
+    removed unnecessary test
+
+commit a11bef06a3f659402fe7563abf99ad00de2209e6
+Author: Scott Chacon <schacon@gee-mail.com>
+Date:   Sat Mar 15 10:31:28 2008 -0700
+
+    first commit
+```
+&emsp;&emsp;`git log`有一些参数模式：
+```
+git log -p
+git log -2
+git log --stat
+git log --pretty=oneline
+git log --pretty=short
+git log --pretty=full
+git log --pretty=fuller
+```
+&emsp;&emsp;每种参数模式展示的信息或多或少有些不同，可以亲自操作试一下。
+&emsp;&emsp;最有意思的是format，可以定制要显示的记录格式。比如：
+```
+$ git log --pretty=format:"%h - %an, %ar : %s"
+3775e5b - xiaxiao, 10 hours ago : delete
+a3bc031 - xiaxiao, 10 hours ago : test
+d73280a - xiaxiao, 10 hours ago : delete cached lll.txt
+9873ff0 - xiaxiao, 10 hours ago : delete ll.txt
+2c9afcf - xiaxiao, 11 hours ago : add new
+2990dfb - xiaxiao, 11 hours ago : commit ll.txt
+0913023 - xiaxiao, 2 days ago : just a readme file
+b6e710b - xiaxiao, 2 days ago : 开始接触学习git2018-10-13
+0c7e5eb - xiaxiao, 2 days ago : just a readme file
+48dd75c - xiaxiao2625666138, 2 weeks ago : my harvest in studying vue
+7e63490 - xiaxiao2625666138, 2 weeks ago : my harvest in studying vue
+bb1c93b - xiaxiao2625666138, 2 weeks ago : my harvest in studying vue
+cda4eaa - xiaxiao2625666138, 2 weeks ago : my harvest in studying vue
+98ad26f - xiaxiao2625666138, 2 weeks ago : read me to get new homework
+```
+&emsp;&emsp;`git log --pretty=format`常用的选项列出了常用的格式占位符写法及其代表意义。
+|选项|说明|
+| - | - |
+|%H|提交对象（commit）的完整哈希字串|
+|%h|提交对象的简短哈希字串|
+|%T|树对象（tree）的完整哈希字串|
+|%t|树对象的简短哈希字串|
+|%P|父对象（parent）的完整哈希字串|
+|%p|父对象的简短哈希字串|
+|%an|作者（author）的名字|
+|%ae|作者的电子邮件地址|
+|%ad|作者修订日期（可以用 --date= 选项定制格式）|
+|%ar|作者修订日期，按多久以前的方式显示|
+|%cn|提交者（committer）的名字|
+|%ce|提交者的电子邮件地址|
+|%cd|提交日期|
+|%cr|提交日期，按多久以前的方式显示|
+|%s|提交说明|
+&emsp;&emsp;当 oneline 或 format 与另一个 log 选项 --graph 结合使用时尤其有用。 这个选项添加了一些ASCII字符串来形象地展示你的分支、合并历史：
+```
+$ git log --pretty=format:"%h %s" --graph
+* 2d3acf9 ignore errors from SIGCHLD on trap
+*  5e3ee11 Merge branch 'master' of git://github.com/dustin/grit
+|\
+| * 420eac9 Added a method for getting the current branch.
+* | 30e367c timeout code and tests
+* | 5a09431 add timeout protection to grit
+* | e1193f8 support for heads with slashes in them
+|/
+* d6016bc require time for xmlschema
+*  11d191e Merge branch 'defunkt' into local
+```
+&emsp;&emsp;`git log`的常用选项：
+|选项|说明|
+| - | - |
+|-p|按补丁格式显示每个更新之间的差异。|
+|--stat|显示每次更新的文件修改统计信息。|
+|--shortstat|只显示 --stat 中最后的行数修改添加移除统计。|
+|--name-only|仅在提交信息后显示已修改的文件清单。|
+|--name-status|显示新增、修改、删除的文件清单。|
+|--abbrev-commit|仅显示 SHA-1 的前几个字符，而非所有的 40 个字符。|
+|--relative-date|使用较短的相对时间显示（比如，“2 weeks ago”）。|
+|--graph|显示 ASCII 图形表示的分支合并历史。|
+|--pretty|使用其他格式显示历史提交信息。可用的选项包括 oneline，short，full，fuller 和 format（后跟指定格式）。|
+&emsp;&emsp;`git log`的另一种常用选项是限制输出的选项：
+|选项|说明|
+| - | - |
+|-(n)|仅显示最近的 n 条提交|
+|--since, --after|仅显示指定时间之后的提交。|
+|--until, --before|仅显示指定时间之前的提交。|
+|--author|仅显示指定作者相关的提交。|
+|--committer|仅显示指定提交者相关的提交。|
+|--grep|仅显示含指定关键字的提交|
+|-S|仅显示添加或移除了某个关键字的提交|
+```
+$ git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \
+   --before="2008-11-01" --no-merges -- t/
+5610e3b - Fix testcase failure when extended attributes are in use
+acd3b9e - Enhance hold_lock_file_for_{update,append}() API
+f563754 - demonstrate breakage of detached checkout with symbolic link HEAD
+d1a43f2 - reset --hard/read-tree --reset -u: remove unmerged new paths
+51a94af - Fix "checkout --track -b newbranch" on detached HEAD
+b0ad11e - pull: allow "git pull origin $something:$current_branch" into an unborn branch
+```
 ---
