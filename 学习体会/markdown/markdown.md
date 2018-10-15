@@ -212,18 +212,18 @@ int main(){
 >[1]:www.w3school.com.cn "w3school"
 >[w3school][1] 
 
-&emsp;&emsp;图片是这样的(路飞是tatil，可以不写)：
+&emsp;&emsp;图片是这样的(夕阳是tatil，可以不写)：
 ```markdown
-![路飞](\img\lufei.jpg "路飞")
+![夕阳](\img\image.jpg "夕阳")
 ```
 &emsp;&emsp;效果是这样的(这里的效果没有tatil)：
-> ![路飞](\img\lufei.jpg)
+> ![夕阳](\img\image.jpg "夕阳")
 
 &emsp;&emsp;图片也可以像链接的索引连接一样(效果不做展示):
 ```markdown
-![路飞][lf]
+![夕阳][lf]
 
-[lf]:\img\lufei.jpg "路飞"
+[lf]:\img\image.jpg "夕阳"
 ```
 &emsp;&emsp;**markdown尚不能指定图片的高度和宽度等，如果需要的话可以使用html的<img>标签。**
 
