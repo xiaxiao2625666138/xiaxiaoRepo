@@ -216,8 +216,8 @@ int main(){
 ```markdown
 ![路飞](\img\lufei.jpg "路飞")
 ```
-&emsp;&emsp;效果是这样的：
-![路飞](\img\lufei.jpg "路飞")
+&emsp;&emsp;效果是这样的(这里的效果没有tatil)：
+> ![路飞](\img\lufei.jpg)
 
 &emsp;&emsp;图片也可以像链接的索引连接一样(效果不做展示):
 ```markdown
