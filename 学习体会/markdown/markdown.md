@@ -182,10 +182,11 @@ int main(){
 &emsp;&emsp;行内代码可以这样写：
 ```markdown
 这是行内代码<code>int i=1;</code>，字体会突出。
+这是行内代码`int i=1;`，字体会突出。
 ```
 &emsp;&emsp;效果是这样的：
->这是行内代码<code>int i=1;</code>，字体会突出。
-
+>这是行内代码<code>int i=1;</code>，字体会突出。<br />
+>这是行内代码`int i=1;`，字体会突出。
 ## 十、链接和图片
 &emsp;&emsp;直接地址链接是这样的：
 ```markdown
