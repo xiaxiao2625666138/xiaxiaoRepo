@@ -267,6 +267,37 @@ $ git checkout -- lll.txt
 
 ---
 
+## Git分支管理
+
+&emsp;&emsp;列出分支:
+```
+$ git branch
+```
+&emsp;&emsp;当你执行 git init 的时候，缺省情况下 Git 就会为你创建"master"分支。手动创建分支:
+```
+$ git branch [branch-name]
+```
+&emsp;&emsp;当你以此方式在上次提交更新之后创建了新分支，如果后来又有更新提交， 然后又切换到了"testing"分支，Git 将还原你的工作目录到你创建分支时候的样子.  
+&emsp;&emsp;切换分支:
+```
+$ git checkout [branch-name]
+```
+&emsp;&emsp;也可以再创建分支时就切换到新的分支:
+```
+$ git checkout -b [branch-name]
+```
+&emsp;&emsp;删除分支:
+```
+$ git branch -d [branch-name]
+```
+&emsp;&emsp;合并分支(把某个branch合并到当前分支):
+```
+$ git merge [branch-name]
+```
+&emsp;&emsp;合并并不仅仅是简单的文件添加、移除的操作，Git 也会合并修改。出现冲突时要求手动修改然后add和commit!
+
+
+
 ## **查看提交历史**
 &emsp;&emsp;`git log`可以查看提交的历史。默认是最新的更新排在前面。 正如你所看到的，这个命令会列出每个提交的 SHA-1 校验和、作者的名字和电子邮件地址、提交时间以及提交说明。
 ```
@@ -385,4 +416,73 @@ d1a43f2 - reset --hard/read-tree --reset -u: remove unmerged new paths
 51a94af - Fix "checkout --track -b newbranch" on detached HEAD
 b0ad11e - pull: allow "git pull origin $something:$current_branch" into an unborn branch
 ```
+---
+
+## 远程仓库
+
+>远程仓库是指托管在因特网或其他网络中的你的项目的版本库。
+
+&emsp;&emsp;下面两条指令可以查看你已经配置的远程仓库:
+```
+ $ git remote
+ $ git remote -v
+```
+&emsp;&emsp;添加远程仓库:(name自定义的名字URL是仓库地址)
+```
+$ git remote add name URL
+```
+&emsp;&emsp;从仓库中拉取你还没有的内容内容:
+```
+$ git fetch [remote-name]
+```
+&emsp;&emsp;如果你使用 clone 命令克隆了一个仓库，命令会自动将其添加为远程仓库并默认以 “origin” 为简写。 所以，git fetch origin 会抓取克隆（或上一次抓取）后新推送的所有工作。  
+&emsp;&emsp;运行 git pull 通常会从最初克隆的服务器上抓取数据并自动尝试合并到当前所在的分支。
+```
+$ git pull
+```
+&emsp;&emsp;推送到远程仓库(克隆时,通常会默认设置为remote-name=origin, branch-name=master):
+```
+$ git push [remote-name] [branch-name]
+```
+&emsp;&emsp;查看远程库:
+```
+$ git remote show [remote-name]
+```
+&emsp;&emsp;远程仓库重命名:
+```
+$ git remote rename [old-name] [new-name]
+```
+&emsp;&emsp;删除远程仓库:
+```
+$ git remote rm [remote-name]
+```
+
+## Git标签
+
+&emsp;&emsp;如果你达到一个重要的阶段，并希望永远记住那个特别的提交快照，你可以使用 git tag 给它打上标签。  
+```
+$ git tag -a v1.0
+```
+&emsp;&emsp;如果我们忘了给某个提交打标签，又将它发布了，我们可以给它追加标签。例如，假设我们发布了提交 85fc7e7(上面实例最后一行)，但是那时候忘了给它打标签。 我们现在也可以:   
+```
+$ git tag -a v0.9 85fc7e7
+```
+&emsp;&emsp;查看所有标签:
+```
+$ git tag
+```
+&emsp;&emsp;指定标签信息:
+```
+$ git tag -a [tagname] -m "message"
+```
+&emsp;&emsp;删除标签:
+```
+$ git tag -d [tagname]
+```
+&emsp;&emsp;查看版本所修改的信息:
+```
+$ git show v1.0
+$ git show eb48s90
+```
+
 ---
