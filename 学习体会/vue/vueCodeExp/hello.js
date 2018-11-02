@@ -94,3 +94,28 @@ var app7 = new Vue({
         }
     }
 })
+
+var app8 = new Vue({
+    el: "#app8",
+    data: {
+        p_style: {
+            color: "green",
+            fontSize:"30px"
+        },
+        p_style_0: {
+            color: "brown",
+            fontSize: "40px"
+        },
+        now_style: {
+            color: "blue",
+            fontSize:"60px"
+        },
+        state:0
+    },
+    methods: {
+        change_style: function () {
+            this.state = !this.state;
+            this.now_style =this.state ? this.p_style_0 : this.p_style;
+        }
+    }
+})

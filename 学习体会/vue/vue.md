@@ -2,11 +2,12 @@
 2018年9月29日&emsp;&emsp;周雪振(5141509091)
 ___
 
-## Vue是什么
+## 一、Vue是什么
 >&emsp;&emsp;Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。
+
  ---
 
-## 入门Vue
+## 二、入门Vue
 ### &emsp;&emsp;1.Vue.js最简单的使用方法
 ```js
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -156,7 +157,10 @@ var app7 = new Vue({
 })
 ```
 
-## Vue模板语法
+---
+
+## 三、Vue模板语法
+
 > Vue.js 使用了基于 HTML 的模板语法，允许开发者声明式地将 DOM 绑定至底层 Vue 实例的数据。所有 Vue.js 的模板都是合法的 HTML ，所以能被遵循规范的浏览器和 HTML 解析器解析。
 
 &emsp;&emsp;在底层的实现上，Vue 将模板编译成虚拟 DOM 渲染函数。结合响应系统，Vue 能够智能地计算出最少需要重新渲染多少组件，并把 DOM 操作次数减到最少。
@@ -255,7 +259,9 @@ var app7 = new Vue({
 ```
 &emsp;&emsp;它们看起来可能与普通的 HTML 略有不同，但 : 与 @ 对于特性名来说都是合法字符，在所有支持 Vue.js 的浏览器都能被正确地解析。  
 
-## 计算属性和监听器
+---
+
+## 四、计算属性和监听器
 
 ### &emsp;**1.计算属性**
 
@@ -367,6 +373,108 @@ var vm = new Vue({
 
 ### &emsp;**2.监听器**
 
-&emsp;&emsp;虽然计算属性在大多数情况下更合适，但有时也需要一个自定义的侦听器。这就是为什么 Vue 通过 watch 选项提供了一个更通用的方法，来响应数据的变化。当需要在数据变化时执行异步或开销较大的操作时，这个方式是最有用的。  
+&emsp;&emsp;虽然计算属性在大多数情况下更合适，但有时也需要一个自定义的侦听器。这就是为什么 Vue 通过 watch 选项提供了一个更通用的方法，来响应数据的变化。当需要在数据变化时执行异步或开销较大的操作时，这个方式是最有用的。    
 &emsp;&emsp;没学会！！！！！！！！！此处还有一万字！！！！！
 
+---
+
+## 五、Class和Style绑定
+
+### &emsp;**1.绑定HTML class**
+#### &emsp;&emsp;**对象语法**
+&emsp;&emsp;我们可以传给 `v-bind:class` 一个对象，以动态地切换 class：
+```HTML
+<div v-bind:class="{ active: isActive }"></div>
+```
+&emsp;&emsp;上面的语法表示 active 这个 class 存在与否将取决于数据属性 isActive 的 truthiness。  
+&emsp;&emsp;v-bind:class 指令也可以与普通的 class 属性共存。当有如下模板:
+```HTML
+<div class="static"
+     v-bind:class="{ active: isActive, 'text-danger': hasError }">
+</div>
+```
+```js
+data: {
+  isActive: true,
+  hasError: false
+}
+```
+&emsp;&emsp;结果渲染为：`<div class="static active"></div>`    
+&emsp;&emsp;当 `isActive` 或者 `hasError` 变化时，class 列表将相应地更新。例如，如果 `hasError` 的值为 `true`，class 列表将变为 `"static active text-danger"`。  
+&emsp;&emsp;绑定的数据对象不必内联定义在模板里：
+```HTML
+<div v-bind:class="classObiect"></div>
+```
+```js
+data:{
+  classObject:{
+    active:true,
+    'text-danger':false
+  }
+}
+```
+&emsp;&emsp;渲染结果和上面一样。  
+&emsp;&emsp;也可以在这里绑定一个返回对象的计算属性。这是一个常用且强大的模式：
+```HTML
+<div v-bind:class="classObject"></div>
+```
+```js
+data:{
+  isActive:true,
+  error:null
+}
+computed:{
+  classObject:function(){
+    return {
+      active:this.isActive && !this.error,
+      'text-danger':this.error &&this.error.type==='fatal'
+    }
+  }
+}
+```
+#### &emsp;&emsp;**数组语法**
+&emsp;&emsp;我们可以把一个数组传给 v-bind:class，以应用一个 class 列表：
+```HTML
+<div v-bind:class="[activeClass, errorClass]"></div>
+```
+```js
+data:{
+  activeClass: 'active',
+  errorClass: 'text-danger'
+}
+```
+&emsp;&emsp;渲染为：`<div class="active text-danger"></div>`  
+&emsp;&emsp;如果你也想根据条件切换列表中的 class，可以用三元表达式：
+```HTML
+<div v-bind:class="[isActive ? activeClass : '', errorClass]"></div>
+```
+&emsp;&emsp;这样写将始终添加 `errorClass`，但是只有在 `isActive` 是 `truthy` 时才添加 `activeClass`。 &emsp;&emsp;不过，当有多个条件 class 时这样写有些繁琐。所以在数组语法中也可以使用对象语法：
+```HTML
+<div v-bind:class="[{ active: isActive }, errorClass]"></div>
+```
+
+### &emsp;**2.绑定内联样式**
+> `v-bind:style` 的对象语法十分直观——看着非常像 CSS，但其实是一个 JavaScript 对象。CSS 属性名可以用驼峰式 (camelCase) 或短横线分隔 (kebab-case，记得用单引号括起来) 来命名：
+
+```HTML
+<div v-bind:style="{color: activeCorlor, fontSize:fontSize+30}"></div>
+```
+```js
+data:{
+  activeColor: 'red',
+  fontSize:30
+}
+```
+&emsp;&emsp;其实，可以直接绑定到一个样式对象，让模板更清晰：
+```HTML
+<div v-bind:style="styleObject"></div>
+```
+```js
+data:{
+  styleObject:{
+    color: 'red',
+    fontSize: '13px'
+  }
+}
+```
+&emsp;&emsp;同样的，对象语法常常也会结合返回对象的计算属性使用。
