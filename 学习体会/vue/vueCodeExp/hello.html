@@ -8,47 +8,76 @@
     </head>
 
     <body>
+        <p>app1:</p>
         <div id="app1">
             <span>Message: {{ msg }}</span><br />
             <button v-on:click="change_msg">change</button>
         </div>
 
         <div id="app2">
+            <p>app2:</p>
             <span v-once>Message: {{ msg }}</span><br />
             <button v-on:click="change_msg">change</button>
         </div>
        
         <div id="app3">
+            <p>app3:</p>
             <p>Using mustaches:{{rawHtml}}</p>
             <p>Using v-html directive:<span v-html="rawHtml"></span></p>
         </div>
 
         <div id="app4">
+            <p>app4:</p>
             <p v-bind:style="app_style">这段字有自己的风格</p>
             <button v-on:click="change_style">change</button>
         </div>
         
         <div id="app5">
+            <p>app5:</p>
             <p>{{ ok ? 'YES':'NO'}}</p>
             <p>{{ number+1 }}</p>
             <button v-on:click="add">add</button>
         </div>
 
         <div id="app6">
+            <p>app6:</p>
             <p>Original message: "{{message}}"</p>
             <p>Computed reversed message:"{{reversedMessage}}"</p>
         </div>
 
         <div id="app7">
+            <p>app7:</p>
             <p>fullname: {{ fullname }}</p>
             <button @click="change_name">change name</button>
         </div>
 
         <div id="app8">
+            <p>app8:</p>
             <p :style="now_style">这段文字有风格</p>
             <button @click="change_style">change style</button>
         </div>
 
+        <p>app9:</p>
+        <div id="app9" :class="selfClass" @mouseover="change" @mouseout="change">
+            <p>{{message}}</p>
+        </div>
+        
+        <p>app10:</p>
+        <div id="app10" class="staticClass" :class="{class1:c1alive, class2:c2alive}" @mouseover="change" @mouseout="change">
+            <p>{{message}}</p>
+        </div>
+
+        <p>app11:</p>
+        <div id="app11" class="staticClass" :class="selfClass"  @mouseover="change" @mouseout="change">
+            <p>{{message}}</p>
+        </div>
+
+        <p>app12:</p>
+        <div id="app12" :style="selfStyle" class="staticClass"  @mouseover="change" @mouseout="change">
+            <p>{{message}}</p>
+        </div>
         <script src="hello.js"></script>
+
+        
     </body>
 </html>

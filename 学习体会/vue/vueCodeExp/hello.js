@@ -119,3 +119,80 @@ var app8 = new Vue({
         }
     }
 })
+
+//测试class的绑定(对象语法)
+var app9 = new Vue({
+    el: "#app9",
+    data: {
+        selfClass: {
+            class1: true,
+            class2: false
+        },
+        message:"Hello Vue! "
+    },
+    methods: {
+        change: function () {
+            this.selfClass.class1 = !this.selfClass.class1;
+            this.selfClass.class2 = !this.selfClass.class2;
+
+        }
+    }
+})
+
+//测试class的绑定(对象语法2)
+var app10 = new Vue({
+    el: "#app10",
+    data: {
+        c1alive: true,
+        c2alive: false,
+        message:"Hello Vue"
+    },
+    methods:{
+        change: function () {
+            this.c1alive = !this.c1alive;
+            this.c2alive = !this.c2alive
+        }
+    }
+})
+
+//class绑定(计算属性)
+var app11 = new Vue({
+    el: "#app11",
+    data: {
+        c1alive: true,
+        message:"Hello Vue!"
+    },
+    computed: {
+        selfClass: function () {
+            return { class1:this.c1alive, class2:!this.c1alive}
+        }
+    },
+    methods: {
+        change: function () {
+            this.c1alive=!this.c1alive
+        }
+    }
+})
+
+//内联style绑定测试
+var app12 = new Vue({
+    el: "#app12",
+    data: {
+        selfStyle: {
+            textAlign:"center",
+            color: "#222222",
+            backgroundColor: "grey",
+            width: "300px",
+            height: "200px"
+        },
+        message: "Hello world",
+        onmouse: 0
+    },
+    methods: {
+        change: function () {
+            this.onmouse = !this.onmouse;
+            this.selfStyle.backgroundColor = this.onmouse ? "#992838" : "grey";
+        }
+    }
+
+})
