@@ -76,8 +76,26 @@
         <div id="app12" :style="selfStyle" class="staticClass"  @mouseover="change" @mouseout="change">
             <p>{{message}}</p>
         </div>
-        <script src="hello.js"></script>
 
-        
+        <p>app13:</p>
+        <div>
+            <ul id="app13">
+                <li v-for="it in items">
+                    {{ it.message }}
+                </li>
+                <li v-for="(it, index) of items">
+                    {{parentMessage}}-{{index}}-{{it.message}}
+                </li>
+            </ul>
+        </div>
+
+        <p>app14:</p>
+        <div id="app14" class="demo">
+            <span v-for="(value, key, index) in friend" class="demo1">
+               {{index}}.{{key}}: {{value}}<br />
+            </span>
+        </div>
+
+        <script src="hello.js"></script>
     </body>
 </html>

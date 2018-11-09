@@ -6,3 +6,35 @@ h1 {
     color:blue;
     text-align:center;
 }
+
+.class1 {
+    text-align:center;
+    background-color:grey;
+    font-size:30px;
+    width:300px;
+    height:200px;
+}
+
+.class2 {
+    text-align:center;
+    background-color:green;
+    color:orange;
+    font-size:40px;
+    width:300px;
+    height:200px;
+}
+
+.staticClass{
+    text-shadow:5px 5px 5px #0011bb;
+}
+
+.demo{
+    background-color:#987654;
+    width:300px;
+    height:150px;
+}
+.demo1{
+    padding-left:20%;
+    font-size:25px;
+    color:#345678;
+}

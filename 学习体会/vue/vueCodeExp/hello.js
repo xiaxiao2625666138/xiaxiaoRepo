@@ -196,3 +196,30 @@ var app12 = new Vue({
     }
 
 })
+
+//测试v-for
+var app13 = new Vue({
+    el: "#app13",
+    data: {
+        parentMessage:"app13",
+        items: [
+            { message: 'apple' },
+            { message: 'banana' },
+            { message: 'orange' },
+            { message: 'blue'}
+        ]
+    }
+})
+
+//测试对象的v-for
+var app14 = new Vue({
+    el: "#app14",
+    data: {
+        friend: {
+            firstName: "龙",
+            lastName: "泽宇",
+            age: 23,
+            like:"compute game"
+        }
+    }
+})
