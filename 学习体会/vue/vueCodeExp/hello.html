@@ -78,8 +78,8 @@
         </div>
 
         <p>app13:</p>
-        <div>
-            <ul id="app13">
+        <div  id="app13">
+            <ul>
                 <li v-for="it in items">
                     {{ it.message }}
                 </li>
@@ -87,6 +87,7 @@
                     {{parentMessage}}-{{index}}-{{it.message}}
                 </li>
             </ul>
+            <button @click="exchange">{{items[0].message}}</button>
         </div>
 
         <p>app14:</p>

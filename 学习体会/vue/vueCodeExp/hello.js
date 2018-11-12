@@ -208,6 +208,15 @@ var app13 = new Vue({
             { message: 'orange' },
             { message: 'blue'}
         ]
+    },
+    methods: {
+        exchange: function () {
+            var v = this.items[0].message;
+            this.items[0].message = this.items[1].message;
+            this.items[1].message = this.items[2].message;
+            this.items[2].message = this.items[3].message;
+            this.items[3].message = v;
+        }
     }
 })
 
@@ -218,8 +227,11 @@ var app14 = new Vue({
         friend: {
             firstName: "龙",
             lastName: "泽宇",
-            age: 23,
-            like:"compute game"
         }
     }
+})
+
+app14.friend = Object.assign({}, app14.friend,{
+    age: 23,
+    like:"compute game"
 })

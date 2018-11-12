@@ -85,7 +85,7 @@ new Vue({
   {{ index }}. {{ key }}: {{ value }}
 </div>
 ```
->&emsp;&emsp;!在遍历对象时，是按 Object.keys() 的结果遍历，但是不能保证它的结果在不同的 JavaScript 引擎下是一致的。
+>&emsp;&emsp;!在遍历对象时，是按 `Object.keys()` 的结果遍历，但是不能保证它的结果在不同的 JavaScript 引擎下是一致的。
 
 > ### `key`
 >&esmp;&emsp;当 Vue.js 用 v-for 正在更新已渲染过的元素列表时，它默认用“就地复用”策略。如果数据项的顺序被改变，Vue 将不会移动 DOM 元素来匹配数据项的顺序， 而是简单复用此处每个元素，并且确保它在特定索引下显示已被渲染过的每个元素。  
@@ -146,4 +146,51 @@ vm.$set(vm.items, indexOfItem, newValue)
 &emsp;&emsp;为了解决第二类问题，你可以使用 `splice`：
 ```js
 vm.items.splice(newLength)
+```
+
+### &emsp;3.对象更改注意事项
+&emsp;&emsp;还是由于 JavaScript 的限制，Vue 不能检测对象属性的添加或删除：
+```js
+var vm = new Vue({
+  data: {
+    a: 1
+  }
+})
+// `vm.a` 现在是响应式的
+
+vm.b = 2
+// `vm.b` 不是响应式的
+```
+
+&emsp;&emsp;对于已经创建的实例，Vue 不能动态添加根级别的响应式属性。但是，可以使用 Vue.set(object, key, value) 方法向嵌套对象添加响应式属性。例如，对于：
+```js
+var vm = new Vue({
+  data: {
+    userProfile: {
+      name: 'Anika'
+    }
+  }
+})
+```
+&emsp;&emsp;你可以添加一个新的 `age` 属性到嵌套的 `userProfile` 对象：
+```js
+Vue.set(vm.userProfile, 'age', 27)
+```
+&emsp;&emsp;你还可以使用 vm.$set 实例方法，它只是全局 Vue.set 的别名：
+```js
+vm.$set(vm.userProfile, 'age', 27)
+```
+&emsp;&emsp;有时你可能需要为已有对象赋予多个新属性，比如使用 Object.assign() 或 _.extend()。在这种情况下，你应该用两个对象的属性创建一个新的对象。所以，如果你想添加新的响应式属性，不要像这样：
+```js
+Object.assign(vm.userProfile, {
+  age: 27,
+  favoriteColor: 'Vue Green'
+})
+```
+&emsp;&emsp;你应该这样做：
+```js
+vm.userProfile = Object.assign({}, vm.userProfile, {
+  age: 27,
+  favoriteColor: 'Vue Green'
+})
 ```
