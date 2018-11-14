@@ -42,8 +42,8 @@
   <td>Delete all breakpoints</td>
   </tr>
   <tr>
-  <td>info delete</td>
-  <td>Look delete information</td>
+  <td>info break</td>
+  <td>Look breakPoint information</td>
   </tr>
   <tr>
   <td rowspan="5">Execution</td>
