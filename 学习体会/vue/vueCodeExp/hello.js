@@ -255,3 +255,22 @@ var app15 = new Vue({
         }
     }
 })
+
+
+var app16 = new Vue({
+    el: "#app16",
+    data: {
+        message1: "",
+        message2: "",
+        checked: false,
+        choseFrut: [],
+        picked: '',
+        selected: '',
+        selected1: "",
+        selections: [
+            { text: "A", value: "apple" },
+            { text: "B", value: "banana" },
+            { text: "C", value: "orange" }
+        ]
+    }
+})

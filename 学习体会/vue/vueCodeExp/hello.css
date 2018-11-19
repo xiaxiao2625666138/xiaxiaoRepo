@@ -38,3 +38,10 @@ h1 {
     font-size:25px;
     color:#345678;
 }
+
+.demo2{
+    width:200px;
+    height:100px;
+    color:green;
+    background:black;
+}

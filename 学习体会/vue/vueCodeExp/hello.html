@@ -119,6 +119,49 @@
             <input v-on:keyup.enter="changeT()" v-model:value="value"></input>
         </div>
 
+        <p>app16</p>
+        <div id="app16">
+            <p>Message is: {{message1}}</p>
+            <input v-model="message1" placeholder="Editor me"><br />
+            <span>Multiline message is:</span>
+
+            <p style="white-space:pre-line;">{{message2}}</p>
+            <textarea class="demo2" v-model.trim="message2" placeholder="Editor me"></textarea><br />
+
+            <input type="checkbox" id="checkbox" v-model="checked" value="apple">
+            <label for="checkbox">{{"单个绑定"+checked}}</label><br />
+
+            <input type="checkbox" id="apple" v-model="choseFrut" value="apple">
+            <label for="apple">apple</label>
+            <input type="checkbox" id="banana" v-model="choseFrut" value="banana">
+            <label for="banana">banana</label>
+            <input type="checkbox" id="pear" v-model="choseFrut" value="pear">
+            <label for="pear">pear</label>
+            <p>多个复选框绑定choseFrut: <span v-for="frut in choseFrut">{{frut+" "}}</span></p>
+
+            <input type="radio" id="apple1" v-model="picked" value="apple">
+            <label for="apple1">apple</label>
+            <input type="radio" id="pear1" v-model="picked" value="pear">
+            <label for="pear1">pear</label>
+            <p>单选框picked: {{picked}}</p>
+
+            <select v-model="selected">
+                <option disabled value=''>请选择</option>
+                <option>apple</option>
+                <option>pear</option>
+                <option>banana</option>
+            </select>
+            <span>Selected: {{selected}}</span><br />
+
+            <select v-model="selected1">
+                <option disabled value="">请选择</option>
+                <option v-for="selection in selections" v-bind:value="selection.value">
+                    {{selection.text}}
+                </option>
+            </select>
+            <span>Selected: {{selected1}}</span>
+        </div>
+
         <script src="hello.js"></script>
     </body>
 </html>
