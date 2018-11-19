@@ -162,6 +162,15 @@
             <span>Selected: {{selected1}}</span>
         </div>
 
+        <p>app17</p>
+        <div id="components-demo">
+            <button-counter title="apple"></button-counter>
+            <button-counter title="pear"></button-counter>
+            <button-counter title="banana"></button-counter>
+            <button-counter v-for="title in titles" v-bind:title="title.mes"></button-counter>
+        </div>
+
         <script src="hello.js"></script>
+        
     </body>
 </html>

@@ -274,3 +274,24 @@ var app16 = new Vue({
         ]
     }
 })
+
+Vue.component("button-counter", {
+    data: function () {
+        return {
+            count: 0
+        }
+    },
+    props: ['title'],
+    template:'<button v-on:click="count++">You clicked {{title}}  {{ count }} times.</button>'
+})
+
+var app17 = new Vue({
+    el: "#components-demo",
+    data: {
+        titles: [
+            { mes: "apple" },
+            { mes: "pear" },
+            { mes: "banana" }
+        ]
+    }
+})
