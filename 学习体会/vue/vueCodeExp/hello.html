@@ -83,8 +83,20 @@
                 <li v-for="it in items">
                     {{ it.message }}
                 </li>
-                <li v-for="(it, index) of items">
-                    {{parentMessage}}-{{index}}-{{it.message}}
+            </ul>
+            <ul>
+                    <li v-for="(it, index) of items">
+                        {{parentMessage}}-{{index}}-{{it.message}}
+                    </li>
+            </ul>
+            <ul> 
+                <li v-for="i in 3">
+                    {{items[i].message}}
+                </li>
+            </ul>
+            <ul>
+                <li v-for="(it, index) of items" v-if="index%2==0">
+                    {{it.message}}
                 </li>
             </ul>
             <button @click="exchange">{{items[0].message}}</button>
@@ -95,6 +107,16 @@
             <span v-for="(value, key, index) in friend" class="demo1">
                {{index}}.{{key}}: {{value}}<br />
             </span>
+        </div>
+
+        <p>app15</p>
+        <div id="app15">
+            <p>I have been click {{clickTime}} times!</p>
+            <button @click.left="hello">hello</button>
+            <button @click.right.prevent="clickTime+=1">add one</button>
+            <button @click.once="say('holle world')">say</button><br />
+            <p>{{message}}</p>
+            <input v-on:keyup.enter="changeT()" v-model:value="value"></input>
         </div>
 
         <script src="hello.js"></script>

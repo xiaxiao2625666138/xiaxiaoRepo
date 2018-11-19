@@ -231,7 +231,27 @@ var app14 = new Vue({
     }
 })
 
-app14.friend = Object.assign({}, app14.friend,{
+app14.friend = Object.assign({}, app14.friend, {
     age: 23,
-    like:"compute game"
+    like: "compute game"
+})
+
+var app15 = new Vue({
+    el: "#app15",
+    data: {
+        value:'hello vue.js!',
+        message: "hello vue.js!",
+        clickTime: 0
+    },
+    methods: {
+        hello: function () {
+            alert(this.message);
+        },
+        say: function (mes) {
+            alert(mes);
+        },
+        changeT: function () {
+            this.message = this.value;
+        }
+    }
 })
