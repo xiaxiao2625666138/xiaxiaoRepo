@@ -9,7 +9,7 @@
 > npm run dev    //运行
 ```
 &emsp;&emsp;运行结果如下：  
-> ![翻译](fanyi.PNG))    
+> ![翻译](fanyi.PNG)      
 
 &emsp;&emsp;复制结果中的链接，在浏览器上运行就可以看到翻译界面：    
-> <img width="70%" src="fy.png"></img>  
+> ![fanyi](fy.PNG)  
