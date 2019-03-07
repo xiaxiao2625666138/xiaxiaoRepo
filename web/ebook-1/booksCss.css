@@ -1,0 +1,54 @@
+
+.content{
+    width:869px;
+}
+
+.header span+span{
+    margin-right:5%;
+    cursor:pointer;
+}
+
+.header span+span:hover{
+    color:#333;
+}
+
+.ebook{
+    margin-right:20%;
+}
+
+.classify{
+    clear:both;
+    height:100%;
+    overflow:hidden;
+    margin:10px 0 20px 0;
+}
+
+input{
+    margin-left:480px;
+    border-radius:16px;
+}
+
+img{
+    float:left;
+    width:120px;
+    margin:2px;
+}
+
+.book-list{
+    clear:both;
+    width:869px;
+    height:796px;
+    overflow:hidden;
+}
+
+.bl{
+    overflow-x:hidden;
+    overflow-y:auto;
+    width:889px;
+    height:794px;
+    z-index:10000;
+}
+
+button{
+    margin:5px;
+}

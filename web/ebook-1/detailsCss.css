@@ -1,0 +1,194 @@
+
+.content{
+    width:1000px;
+}
+
+.details-content img{
+    margin:0;
+}
+
+.details-content img:hover{
+    opacity:1;
+}
+
+.relational-books{
+    display:inline-block;
+    vertical-align: top; 
+    width:300px;
+    overflow:hidden;
+}
+
+.rbook{
+    width:300px;
+    overflow:hidden;
+    margin-bottom:30px;
+}
+
+.books{
+    position:relative;
+    width:320px;
+    height:398px;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+.title{
+    text-align:center;
+    background:#222;
+    height:40px;
+    line-height:40px;
+    margin-top:0;
+    margin-bottom:2px;
+}
+
+.item{
+    z-index:100;
+    overflow: auto;
+    white-space: nowrap;
+    width:300px;
+    padding:1px;
+    margin-bottom:2px;
+    cursor:pointer;
+}
+
+.item-front{
+    position:absolute;
+    width:298px;
+    height:130px;
+    display:none;
+}
+
+.item:hover .item-front{
+    display:block;
+}
+
+.item img{
+    width:100px;
+}
+
+.message{
+    display:inline-block;
+    padding:0 5px;
+    width:180px;
+    overflow:hidden;
+}
+
+.message p{
+    width:100%;
+    height:30px;
+    line-height:30px;
+    text-align:left;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+
+.item p+p{
+    font-size:13px;
+}
+
+
+.book-details{
+    display:inline-block;
+    vertical-align: top; 
+    width:640px;
+    margin-left:56px;
+    overflow:hidden;
+}
+
+.this-book{
+    position:relative;
+    z-index:100;
+}
+
+.this-book img{
+    width:130px;
+}
+
+.this-book button{
+    float:none;
+}
+
+.book-message{
+    display:inline-block;
+    margin-left:10px;
+    font-size:15px;
+}
+
+.book-message p{
+    margin:10px;
+}
+
+.this-book .highlight{
+    font-size:25px;
+    margin:10px;
+    position:absolute;
+    right:0;
+}
+
+.book-name{
+    font-size:20px;
+}
+
+.logo button{
+    font-size:10px;
+    margin: 0 2px;
+    cursor:auto;
+}
+
+.book-fun button{
+    border-radius:4px;
+    margin:5px 3px;
+}
+
+.preview{
+    margin-top:2px;
+    width:640px;
+    overflow:hidden;
+}
+
+.preview span{
+    padding:8px 12px 4px 12px;
+    margin:8px;
+    font-size:20px;
+    border-bottom:solid 2px #111;
+    cursor:pointer;
+}
+
+.preview span:hover{
+    border-bottom-color:orange;
+}
+
+.pre-content{
+    padding: 0 5px 5px 5px;
+    width:660px;
+    height:400px;
+    margin-top:20px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    z-index:100;
+}
+
+.similar-book{
+    margin-top:2px;
+    overflow:hidden;
+    width:660px;
+    height:194px;
+    z-index:100;
+}
+
+.similar-book p{
+    padding:8px 12px;
+}
+
+.similar-book div{
+    padding:0 2px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    height:200px;
+}
+
+.similar-book img{
+    float:none;
+    width:120px;
+}

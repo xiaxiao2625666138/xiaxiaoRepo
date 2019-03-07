@@ -1,0 +1,120 @@
+
+.login-register{
+    margin-left:10%;
+    float:right;
+    margin-top:45px;
+    margin-right:20px;
+}
+
+input {
+    margin-left:30%;
+}
+
+.content{
+    width:1200px;
+}
+
+.body-left{
+    display:inline-block;
+    width:160px;
+    padding:20px 2px;
+    z-index:100;
+}
+
+.body-left p{
+    font-size:20px;
+    margin:0;
+    height:50px;
+    line-height:50px;
+    padding-left:50px;
+    cursor:pointer;
+    border-radius:10px;
+}
+
+.body-left p:hover{
+    background:#111;
+}
+
+.body-right{
+    display:inline-block;
+    vertical-align: top;  
+    margin-left:20px;
+    overflow:hidden;
+}
+
+.body-right p{
+    margin:4px 2px;
+}
+
+.br-block{
+    white-space: nowrap;
+    overflow:hidden;
+}
+
+.br-block1{
+    display:inline-block;
+    width:620px;
+    height:188px;
+    overflow:hidden;
+}
+
+.br-block2{
+    display:inline-block;
+    width:620px;
+    height:348px;
+    overflow:hidden;
+}
+
+.recommand{
+    overflow-x:auto;
+    overflow-y:hidden;
+    height:200px;
+}
+
+.newbook{
+    overflow-x:hidden;
+    overflow-y:auto;
+    width:640px;
+    height:315px;
+}
+
+.left{
+    display:inline-block;
+    padding:1px;
+    width:620px;
+    z-index:100;
+}
+
+.right{
+    display:inline-block;
+    vertical-align: top; 
+    margin-left:20px;
+    width:160px;
+}
+
+.br-extend{
+    margin-top:40px;
+}
+
+a{
+    color:#aaa;
+    text-decoration:none;
+}
+
+img{
+    width:120px;
+}
+
+.newbook img{
+    float:left;
+    margin:2px;
+}
+
+.recommand img{
+    margin:0;
+}
+
+button{
+    margin:5px;
+}
+
