@@ -102,7 +102,7 @@
 }
 
 .this-book img{
-    width:130px;
+    width:150px;
 }
 
 .this-book button{
@@ -122,6 +122,9 @@
 .this-book .highlight{
     font-size:25px;
     margin:10px;
+}
+
+.score{
     position:absolute;
     right:0;
 }
