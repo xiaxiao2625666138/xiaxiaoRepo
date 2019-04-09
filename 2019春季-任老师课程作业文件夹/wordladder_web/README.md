@@ -18,14 +18,14 @@ http://localhost:8086/wordladder?word1=find&word2=leave
 ```
 [find, lind, land, lane, lave, leave]
 ```
-<img style="width:500px" src="img/get.png" />
+![get请求发送](img/get.png)
 
 ## 4. test
 * service层功能测试 `MainTest`
 * web层功能测试 `WebTest`
 
-&emsp;&emsp;<img style="width:300px" src="img/testfile.png" />
+![测试文件](img/testfile.png)
 
 &emsp;&emsp;测试结果：
 
-&emsp;&emsp;<img style="width:300px" src="img/test.png" />
+![测试结果](img/test.png)
