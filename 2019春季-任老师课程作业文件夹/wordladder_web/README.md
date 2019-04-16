@@ -47,32 +47,35 @@ http://localhost:8086/wordladder?word1={word1}&word2={word2}
 > 在浏览器获取权限后复制cookie，到postman中执行以下操作
 * 获取wordladder路径
 
-&emsp;&emsp;<img style="width:800px" src="img/postmanwordladder.PNG" />
+&emsp;&emsp;<img style="width:700px" src="img/postmanwordladder.PNG" />
 
 * actuator health监视健康情况 
 &emsp;&emsp;路径：`src/com.zxz.wordladder/health/MyHealthIndicator.java`
 
-&emsp;&emsp;<img style="width:800px" src="img/actuatorhealth.PNG" />
+&emsp;&emsp;<img style="width:700px" src="img/actuatorhealth.PNG" />
 
 * actuator info 项目信息
 
-&emsp;&emsp;<img style="width:800px" src="img/actuatorinfo.PNG" />
+&emsp;&emsp;<img style="width:700px" src="img/actuatorinfo.PNG" />
 
 * actuator shutdown 终止程序
 
-&emsp;&emsp;<img style="width:800px" src="img/actuatorshutdown.PNG" />
+&emsp;&emsp;<img style="width:700px" src="img/actuatorshutdown.PNG" />
 
 * security 权限保护，重定位地址url。
 
 &emsp;&emsp;`http://localhost:8086/`下的非`.html`后缀的url被重定位如下
 
-&emsp;&emsp;<img style="width:800px" src="img/browserelocation.PNG" />
+&emsp;&emsp;<img style="width:700px" src="img/browserelocation.PNG" />
 
-&emsp;&emsp;<img style="width:800px" src="img/securityrelocation.PNG" />
+&emsp;&emsp;<img style="width:700px" src="img/securityrelocation.PNG" />
 
 &emsp;&emsp;`http://localhost:8086/`下的`.html`后缀的url被重定位到登陆界面`http://localhost:8086/login.html`
 
-&emsp;&emsp;<img style="width:800px" src="img/relocationlogin.PNG" />
+&emsp;&emsp;<img style="width:700px" src="img/relocationlogin.PNG" />
 
+## 6. git pull request
+
+&emsp;&emsp;<img style="width:600px" src="img/gitpull.PNG" />
 
 
