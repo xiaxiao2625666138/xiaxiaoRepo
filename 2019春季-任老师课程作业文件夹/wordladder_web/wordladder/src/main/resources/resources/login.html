@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login-wordladder</title>
+    <style>
+        .body{
+            padding:100px;
+        }
+        p{
+            text-align:center;
+            font-size:25px;
+        }
+        form{
+            width:400px;
+            background:#d0d0d0;
+            margin:0 auto;
+            padding:10px 0 20px 0;
+            vertical-align:center;
+            border-radius:4px;
+        }
+        input{
+            margin:0 auto;
+            margin-bottom: 30px;
+            padding:0 8px;
+            width:200px;
+            height:28px;
+            border-radius:4px;
+            border-width:0;
+            display:block;
+        }
+        .submit{
+            cursor:pointer;
+        }
+        .submit:hover{
+            background:orange;
+        }
+    </style>
+</head>
+<body>
+
+  <div>
+      <div class="body">
+          <form action="/login" method="post">
+              <p>login to wordladder</p>
+              <input type="text" name="username" required="required" placeholder="username"/>
+              <input type="text" name="password" required="required" placeholder="password"/>
+              <input type="submit" class="submit" value="submit"/>
+          </form>
+      </div>
+  </div>
+
+</body>
+</html>
