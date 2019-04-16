@@ -30,6 +30,53 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+
+            <groupId>org.springframework.boot</groupId>
+
+            <artifactId>spring-boot-starter-security</artifactId>
+
+        </dependency>
+
+
+
+        <dependency>
+
+            <groupId>org.springframework.boot</groupId>
+
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+
+            <scope>provided</scope>
+
+        </dependency>
+
+
+
+        <dependency>
+
+            <groupId>org.springframework.security</groupId>
+
+            <artifactId>spring-security-test</artifactId>
+
+            <scope>test</scope>
+
+        </dependency>
+
+        <dependency>
+
+            <groupId>com.jayway.jsonpath</groupId>
+
+            <artifactId>json-path</artifactId>
+
+            <scope>test</scope>
+
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -66,6 +113,17 @@
                             <skipTests>true</skipTests>
                         </configuration>
                     </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build-info</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
         </plugins>
     </build>
