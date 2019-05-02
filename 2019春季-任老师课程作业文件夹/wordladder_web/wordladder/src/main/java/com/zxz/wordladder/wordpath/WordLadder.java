@@ -1,11 +1,9 @@
 package com.zxz.wordladder.wordpath;
 
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayDeque;
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 /**
@@ -27,18 +25,22 @@ public class WordLadder {
 
     /**
      * 设置词典
-     * 以参数File对象为字典，读取字典存放于dictionary中
-     * @param file
+     * 以参数File对象为字典，读取字典存放于dictionary
      * @throws IOException
      */
-    public void setDictionary(File file) throws IOException{
+    public void setDictionary(/*File file*/) throws IOException{
         dictionary=new HashSet<String>();
-        DataInputStream din=new DataInputStream(new FileInputStream(file));
+        /*DataInputStream din=new DataInputStream(new FileInputStream(file));
         String word=din.readLine();
         while(word!=null){
             dictionary.add(word);
             word=din.readLine();
         }
+        */
+            Scanner file = new Scanner(new File("src/txtfile/dictionary.txt"));
+            while (file.hasNextLine())
+                dictionary.add(file.nextLine());
+            file.close();
     }
 
     /**

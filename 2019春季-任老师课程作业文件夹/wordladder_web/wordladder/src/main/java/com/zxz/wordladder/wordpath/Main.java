@@ -32,18 +32,21 @@ public class Main {
      */
     public String getWordLadder(String word1, String word2){
         try {
+            /*
             Resource resource=new ClassPathResource("txtfile/dictionary.txt");
             this.file=resource.getFile();
+            */
             ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
             WordLadder wordlad = (WordLadder) applicationContext.getBean("WordLadder");
-            wordlad.setDictionary(file);
+            wordlad.setDictionary();
             //WordLadder wordlad = new WordLadder(this.file);
             ArrayDeque<StringBuilder> path;
             path = wordlad.wordChangePath(new StringBuilder(word1), new StringBuilder(word2));
             if (path.isEmpty()) return "There is no path between: "+word1+" and "+word2;
             return path.toString();
         }catch(IOException err){
-            return "File error!";
+            err.printStackTrace();
+            return "file error";
         }
     }
 }
