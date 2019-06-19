@@ -15,14 +15,14 @@ docker run -itd -p 8086:8086 --link=wordladder:wordladder --name login xiaxiao/w
 http://localhost:8086/login.html
 ```
 
-<img style="width:400px;" src="img/login.PNG">
+<img style="width:400px;" src="img/login.png">
 
 * get wordladder
 ```
 http://localhost:8086/wordladder?word1=like&word2=find
 ```
 
-<img style="width:600px;" src="img/wordladder.PNG">
+<img style="width:600px;" src="img/wordladder.png">
 
 ### 3. 两个独立的service
 
