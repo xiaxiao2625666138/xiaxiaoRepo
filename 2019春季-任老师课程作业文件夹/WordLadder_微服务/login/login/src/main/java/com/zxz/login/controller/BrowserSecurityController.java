@@ -1,4 +1,4 @@
-package com.zxz.wordladder.controller;
+package com.zxz.login.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.security.web.DefaultRedirectStrategy;
@@ -19,9 +19,12 @@ import java.io.IOException;
  * @author MrBird
  */
 @RestController
-public class WebSecurityController {
+public class BrowserSecurityController {
+
     private RequestCache requestCache = new HttpSessionRequestCache();
+
     private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
+
     @GetMapping("/authentication/require")
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public String requireAuthentication(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -31,7 +34,8 @@ public class WebSecurityController {
             if (StringUtils.endsWithIgnoreCase(targetUrl, ".html")){
                 redirectStrategy.sendRedirect(request, response, "/login.html");
             }
+
         }
-        return "<h1 style=\"width:400px;margin:0 auto;text-align=center;\"> 访问的资源需要身份认证！ </h1>";
+        return " 访问的资源需要身份认证！ ";
     }
 }
